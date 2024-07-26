@@ -1,0 +1,109 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-inner {
+    position: relative;
+    background-color: white;
+    padding: 50px 30px;
+    width: 500px;
+    height: 390px;
+    border-radius: 30px;
+}
+.popup-inner-apply-job {
+    position: relative;
+    background-color: white;
+    padding: 50px 30px;
+    width: 500px;
+    height: 450px;
+    border-radius: 30px;
+}
+.popup-inner h2 , .popup-inner-apply-job h2 {
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.popup-inner .text , .popup-inner-apply-job .text {
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    border: 1px solid #3a3a3a;
+}
+.popup-inner form , .popup-inner-apply-job form{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    flex-direction: column;
+}
+.popup-inner .send , .popup-inner-apply-job .send{
+    border: 1px solid #5cb7fd;
+    background-color: #5cb7fd;
+    padding: 10px 15px;
+    border-radius: .375rem;
+    margin-top: 20px;
+    width: 100%;
+}
+.popup-inner .send:hover , .popup-inner-apply-job .send:hover {
+    background-color: #fff;
+}
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    border: none;
+    background-color: #fff;
+    font-size: 30px;
+}
+.popup .input-file {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+/* .popup input[type='file'] {
+    border: 1px solid #5cb7fd;
+    background-color: #5cb7fd;
+    padding: 10px 15px;
+    border-radius: .375rem;
+    margin-top: 20px;
+} */
+.popup .name {
+    position: relative;
+}
+.popup .name .lable-name {
+    position: absolute;
+    top: -13px;
+    left: 15px;
+    background-color: #fff;
+}
+.popup .input2 {
+    position: relative;
+    width: 100%;
+}
+.popup .input2 .lable-name {
+    position: absolute;
+    top: -13px;
+    left: 15px;
+    background-color: #fff;
+}
+.popup .input3 {
+    position: relative;
+    width: 100%;
+}
+.popup .input3 .lable-email {
+    position: absolute;
+    top: -13px;
+    left: 15px;
+    background-color: #fff;
+}

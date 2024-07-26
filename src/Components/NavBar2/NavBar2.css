@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.dash-navbar {
+    width: 100%;
+    background-color: #c9c4c4;
+    padding: 10px 0;
+}
+.dash-navbar .dash {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dash-navbar .logo {
+    width: 100px;
+}
+.dash-navbar .company-name {
+    margin-bottom: 0;
+    font-size: 20px;
+}
+.dash-navbar .article , .dash-navbar .jobs , .dash-navbar .cvs {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
+.addbutton {
+    width: 100%;
+    text-align: right;
+    margin-top: 30px;
+}
+.add {
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 1px solid #5cb7fd;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.add:hover {
+    background-color: #5cb7fd;
+}

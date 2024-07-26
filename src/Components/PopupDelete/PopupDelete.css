@@ -1,0 +1,52 @@
+.popupDelete {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popupDelete .bodyPopup {
+    position: relative;
+    background-color: white;
+    padding: 50px 30px;
+    width: 500px;
+    height: 390px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.popupDelete .message {
+    text-align: center;
+}
+.popupDelete .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.popupDelete .buttons .ok {
+        border: 1px solid #5cb7fd;
+        padding: 10px 15px ;
+        background: #5cb7fd;
+        border-radius: 10px;
+        font-size: 20px;
+}
+.popupDelete .buttons .cancel {
+        border: 1px solid #5cb7fd;
+        padding: 10px 15px ;
+        background: #5cb7fd;
+        border-radius: 10px;
+        font-size: 20px;
+}
+.popupDelete .buttons .ok:hover , .popupDelete .buttons .cancel:hover {
+    background-color: #fff;
+}
+.popupDelete .icon {
+    font-size: 60px;
+}

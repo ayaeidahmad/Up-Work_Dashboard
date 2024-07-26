@@ -1,0 +1,85 @@
+.jobCard {
+    /* background-color: #eeeeee71; */
+    padding: 30px 0;
+}
+.jobCard .job-card {
+    /* position: relative; */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    /* margin-bottom: 0 !important; */
+}
+.jobCard .body {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    background-color: #eee;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px 0px #ddd;
+    gap: 5px;
+}
+.jobCard .card-body {
+    padding: 0;
+}
+.jobCard  p {
+    margin-bottom: 0;
+}
+
+.job-card strong {
+    font-weight: bold;
+}
+.jobCard .title {
+    color: #5cb7fd;
+}
+.jobCard .job-card p {
+    color: #858080;
+}
+.jobCard strong {
+    color: #5d5b5b;
+}
+.Applynone {
+    display: none;
+}
+.trashNone , .updateNone , .buttonsNone {
+    display: none;
+}
+.buttons .trash {
+    border: none;
+    color: red;
+    font-size: 20px;
+    background-color: #fff;
+}
+.buttons .update {
+    border: none;
+    color: #5d5b5b;
+    background-color: #fff;
+    font-size: 20px;
+    padding-right: 15px;
+}
+.jobCard .address {
+    /* text-align: right !important; */
+    padding: 10px 0 0 0;
+}
+.jobCard .address .LocationDot {
+    padding-right: 7px;
+}
+.jobCard .part3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+}
+.jobCard .Apply {
+    border: 1px solid #5cb7fd;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: .375rem;
+    color: #5cb7fd;
+}
+/* .jobCard .jobCard-title {
+    color: #000;
+} */
