@@ -3,10 +3,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+.menu-button {
+    display: none;
+}
 .dash-navbar {
     width: 100%;
     background-color: #c9c4c4;
     padding: 10px 0;
+    position: fixed;
+    z-index: 10;
 }
 .dash-navbar .dash {
     display: flex;
@@ -25,18 +30,35 @@
     color: #000;
     font-size: 20px;
 }
-.addbutton {
-    width: 100%;
-    text-align: right;
-    margin-top: 30px;
-}
-.add {
-    padding: 10px 15px;
-    background-color: #fff;
-    border: 1px solid #5cb7fd;
-    border-radius: 10px;
-    text-decoration: none;
-}
-.add:hover {
-    background-color: #5cb7fd;
+@media (max-width:768px) {
+    .menu-button {
+        display: inline;
+    }
+    .dash-navbar .dash {
+        display: none;
+    }
+    .dash-navbar {
+        z-index: 100;
+    }
+    .menu {
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        flex-direction: column;
+        gap: 30px;
+        position: relative;
+    }
+    .menu button {
+        padding: 10px 15px ;
+        background-color: #fff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+    }
+    .menu-options {
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        flex-direction: column;
+        gap: 20px;
+    }
 }

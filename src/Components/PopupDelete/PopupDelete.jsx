@@ -8,7 +8,7 @@ const PopupDelete = ({ message, onConfirm, onCancel }) => {
             <FontAwesomeIcon className='icon' icon={faTriangleExclamation} />
             <h2 className='message'>{message}</h2>
             <div className='buttons'>
-                <button className='ok' onClick={onConfirm}>OK</button>
+                <button className='ok' onClick={onConfirm}>Yes, Delete it!</button>
                 <button className='cancel' onClick={onCancel}>Cancel</button>
             </div>
         </div>

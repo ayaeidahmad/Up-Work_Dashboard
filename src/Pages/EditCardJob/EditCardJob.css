@@ -1,0 +1,48 @@
+.editjob {
+    width: 100%;
+    height: 100vh;
+}
+.editjob form {
+    width: 90%;
+    padding: 20px 0;
+}
+.editjob .title {
+    padding: 100px 0 20px 0;
+}
+.editjob .title h2 {
+    font-weight: bold;
+    font-size: 40px;
+}
+.editjob form input {
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+}
+.editjob form .label {
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+.editjob .input1 , .editjob .input2 , .editjob .input3 ,
+.editjob .input4 , .editjob .input5 , .editjob .input6 , .editjob .input7 {
+    padding-bottom: 25px;
+}
+.editjob input:focus {
+    outline: 1px solid #aaa;
+}
+.editjob .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.editjob .button button {
+    padding: 10px 45px;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: #5cb7fd;
+    border: 1px solid #5cb7fd;
+}
+.editjob .button button:hover {
+    background-color: #fff;
+}

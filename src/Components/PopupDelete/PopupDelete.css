@@ -27,7 +27,8 @@
 .popupDelete .buttons {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10px;
     align-items: center;
 }
 .popupDelete .buttons .ok {

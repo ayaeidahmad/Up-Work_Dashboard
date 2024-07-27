@@ -1,8 +1,9 @@
 import {  RouterProvider, createBrowserRouter } from "react-router-dom"
 import './App.css'
-import NavBar2 from "./Components/NavBar2/NavBar2";
 import JobCard from "./Components/JobCard/JobCard";
-import AddForm from "./Pages/AddForm/AddForm";
+import AddJobs from "./Pages/AddJobs/AddJobs";
+import EditCardJob from "./Pages/EditCardJob/EditCardJob";
+import NavBar2 from "./Components/NavBar2/NavBar2";
 
 function App() {
   const Routing = createBrowserRouter([ 
@@ -11,7 +12,8 @@ function App() {
         // {path : "/articles" , element: }
         // {path : "/cvs" , element: }
       ] } ,
-      {path: "/addform" , element: <AddForm/>}
+      {path: "/addjob" , element: <AddJobs/>} ,
+      {path: "/EditCardJob" , element: <EditCardJob/>}
   ])
   return (
     <RouterProvider router={Routing}>

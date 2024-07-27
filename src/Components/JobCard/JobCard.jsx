@@ -7,6 +7,7 @@ import './JobCard.css'
 import { useState } from 'react';
 import PopUpAddReviews from '../PopUpAddReviews/PopUpAddReviews';
 import PopupDelete from '../PopupDelete/PopupDelete';
+import { Link } from 'react-router-dom';
 const JobCard = ({page, onDelete }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -66,6 +67,11 @@ const JobCard = ({page, onDelete }) => {
     return (
         <section className='jobCard'>
             <Container>
+            <div className="addbutton">
+                <Link to="/addjob"  className='add'>Add New Job</Link>
+            </div>
+            </Container>
+            <Container>
                 <Row className='jobRow'>
                     {Job_Details.map(index => {
                     return (
@@ -86,9 +92,9 @@ const JobCard = ({page, onDelete }) => {
                                         </p>
                                         <button  onClick={handleAddReviewsClick} className={page === "landingPage" ? "Apply" : "Applynone"}>Apply Here</button>
                                         <div className={page === "landingPage" ? "buttonsNone" : "buttons"}>
-                                            <button className="update">
+                                            <Link to="/EditCardJob" className="update">
                                                 <FontAwesomeIcon icon={faEdit}/>
-                                            </button>
+                                            </Link>
                                             <button className="trash" onClick={() => setIsPopupOpen(true)}>
                                                 <FontAwesomeIcon icon={faTrashAlt}/>
                                             </button>
@@ -112,7 +118,7 @@ const JobCard = ({page, onDelete }) => {
             />
             {isPopupOpen && (
                 <PopupDelete 
-                    message="Are you sure you want to confirm deletion" 
+                    message="Are you sure you want to confirm deletion ?" 
                     onConfirm={handleDelete} 
                     onCancel={() => setIsPopupOpen(false)} 
                 />

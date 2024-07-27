@@ -71,13 +71,6 @@
     width: 100%;
     gap: 10px;
 }
-/* .popup input[type='file'] {
-    border: 1px solid #5cb7fd;
-    background-color: #5cb7fd;
-    padding: 10px 15px;
-    border-radius: .375rem;
-    margin-top: 20px;
-} */
 .popup .name {
     position: relative;
 }

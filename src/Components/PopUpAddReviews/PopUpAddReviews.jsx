@@ -12,13 +12,13 @@ const PopUpAddReviews = ({ page , show, closePopup, sendReview, review, setRevie
                     <h2 style={{display : page==="opinion" ? "" : "none"}}>Add Reviews</h2>
                     <h2 style={{display : page==="opinion" ? "none" : ""}}>Apply Here</h2>
                     <form action="">
-                        <div className="name w-100">
-                            <label className='lable-name' htmlFor="">{page==="opinion" ? "Review" :"Name"}</label>
-                            <input className='text' type="text" placeholder={page==="opinion" ? "my review is ..." : "Aya Ahmad"} value={review} onChange={(e) => setReview(e.target.value)} required/>
-                        </div>
                         <div className='input2' style={{display : page==="opinion" ? "" : "none"}}>
                             <label className='lable-name' htmlFor="">Name</label>
                             <input style={{display : page==="opinion" ? "" : "none"}} className='text' type="text" placeholder="Aya Ahmad" value={rating} onChange={(e) => setRating(e.target.value)} />
+                        </div>
+                        <div className="name w-100">
+                            <label className='lable-name' htmlFor="">{page==="opinion" ? "Review" :"Name"}</label>
+                            <input className='text' type="text" placeholder={page==="opinion" ? "my review is ..." : "Aya Ahmad"} value={review} onChange={(e) => setReview(e.target.value)} required/>
                         </div>
                         <div className="input3"  style={{display : page==="opinion" ? "none" : ""}}>
                             <label className='lable-email' htmlFor="">Email </label>
