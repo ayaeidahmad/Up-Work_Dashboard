@@ -1,0 +1,22 @@
+.articles {
+    margin: 0px 7.5%;
+}
+
+.articles .article-title,
+.articles .article-para {
+    margin-left: 1%;
+}
+
+ .trash {
+    border: none;
+    color: #5d5b5b;
+    font-size: 20px;
+    background-color: #fff;
+}
+ .update {
+    border: none;
+    color: #5d5b5b;
+    background-color: #fff;
+    font-size: 20px;
+    padding-right: 15px;
+}
