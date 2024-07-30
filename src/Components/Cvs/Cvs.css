@@ -1,0 +1,30 @@
+.CV .cv-list {
+    list-style: none;
+}
+.CV ul {
+    padding-left: 0rem !important;
+}
+.CV {
+    padding: 100px 0;
+}
+.CV .cv-item {
+    border: 1px solid #aaa;
+    padding: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 0px #bbb;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.CV .title {
+    text-decoration: none;
+    font-size: 25px;
+    color: #5d5b5b;
+}
+.CV .icon {
+    font-size: 25px;
+    padding-left: 20px;
+    color: #5d5b5b;
+    cursor: pointer;
+}

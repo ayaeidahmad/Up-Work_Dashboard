@@ -5,8 +5,10 @@ import AddJobs from "./Pages/AddJobs/AddJobs";
 import EditCardJob from "./Pages/EditCardJob/EditCardJob";
 import NavBar2 from "./Components/NavBar2/NavBar2";
 import Articlecard from "./Components/Article/Articlecard";
-import img from './assets/Images/rejected.png'
+import img from './assets/Images/article.jpg'
 import Cvs from "./Components/Cvs/Cvs";
+import AddArticle from "./Pages/AddArticle/AddArticle";
+import EditArticle from "./Pages/EditArticle/EditArticle";
 
 function App() {
 
@@ -43,7 +45,9 @@ function App() {
       ]
     },
     { path: "/addjob", element: <AddJobs /> },
-    { path: "/EditCardJob", element: <EditCardJob /> }
+    { path: "/EditCardJob", element: <EditCardJob /> } ,
+    { path: "/AddArticle", element: <AddArticle /> },
+    { path: "/EditeArticle", element: <EditArticle /> },
   ])
   return (
     <RouterProvider router={Routing}>
