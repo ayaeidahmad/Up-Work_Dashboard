@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./ArticleCard.css"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -8,6 +8,8 @@ import { faLocationDot, faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-i
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PopUpAddReviews from '../PopUpAddReviews/PopUpAddReviews';
 import PopupDelete from '../PopupDelete/PopupDelete';
+import axios from 'axios';
+import NavBar2 from '../NavBar2/NavBar2';
 
 const ArticleCards = ({ articles , Stetus , onDelete}) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -33,18 +35,67 @@ const ArticleCards = ({ articles , Stetus , onDelete}) => {
         setRating('');
         setShowPopup(false);
         };
+
+        const [userData, setUserData] = useState(
+            localStorage.getItem('Maneger')
+          );
+    
+        const [Loge, setLoge] = useState(
+            localStorage.getItem('logo')
+          );
+    
+        const [color, setcolor] = useState(
+            localStorage.getItem('color')
+          );
+    
+
+        const [data, setData] = useState([]);
+        const [loading, setLoading] = useState(true);
+        const [error, setError] = useState(null);
+        const [token, settoken] = useState(
+            localStorage.getItem('token')
+          );
+
+        useEffect(() => {
+          const fetchData = async () => {
+            try {
+              const response = await axios.get('http://127.0.0.1:8000/api/articles', {
+                headers: {
+                  'Accept': 'application/json',
+                  'Authorization': `Bearer ${token}`,
+                },
+              });
+              setData(response.data[0]);
+              console.log(response.data);
+              
+              setLoading(false);
+            } catch (error) {
+              setError(error.message);
+              setLoading(false);
+            }
+          };
+      
+          fetchData();
+        }, []); // المصفوفة الفارغة لضمان أن الجلب يحدث مرة واحدة عند التحميل
+      
+        if (loading) return <p>Loading...</p>;
+        if (error) return <p>Error: {error}</p>;
+
+
     return (
+        <>
+            <NavBar2 userData={userData}Loge={Loge}color={color}/>
         <section className='articles' style={{ padding: "70px 0" }} >
             <Container>
                 <div className="addbutton" style={{ padding: " 0" }}>
                     <Link to="/AddArticle" className='add'>Add New Article</Link>
                 </div>
                 <Row>
-                    {articles.map(index => {
+                    {data.map(index => {
                         return (
                             <Col className="colArticle" key={index} lg={4} md={6} sm={12} data-aos="zoom-in-down">
                                 <Card className='ArticleCard' style={{ width: '20wh', height: '100%' }} >
-                                    <Card.Img className="image" variant="top" src={index.photo} />
+                                    <Card.Img className="image" variant="top" src={index.photo_url} />
                                     <Card.Body>
                                         <Card.Title className="title">{index.title}</Card.Title>
                                         <Card.Text className="content">
@@ -84,7 +135,9 @@ const ArticleCards = ({ articles , Stetus , onDelete}) => {
                     />
                 )}
             </Container>
-        </section>)
+        </section>
+        </>
+        )
 }
 export default ArticleCards
 

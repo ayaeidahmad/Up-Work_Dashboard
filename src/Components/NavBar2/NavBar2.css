@@ -8,10 +8,10 @@
 }
 .dash-navbar {
     width: 100%;
-    background-color: #c9c4c4;
     padding: 10px 0;
     position: fixed;
     z-index: 10;
+    color: white;
 }
 .dash-navbar .dash {
     display: flex;
@@ -27,7 +27,7 @@
 }
 .dash-navbar .article , .dash-navbar .jobs , .dash-navbar .cvs {
     text-decoration: none;
-    color: #000;
+    color: #fff;
     font-size: 20px;
 }
 @media (max-width:768px) {

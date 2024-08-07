@@ -31,6 +31,8 @@
 }
 .jobCard .title {
     color: #5cb7fd;
+    font-size: 22px;
+    font-weight: 700;
 }
 .jobCard .job-card p {
     color: #858080;

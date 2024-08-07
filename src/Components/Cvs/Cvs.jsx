@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import pdf from './../../assets/Images/logo.svg'
 import { Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck , faTimes , faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import './Cvs.css'
+import NavBar2 from '../NavBar2/NavBar2';
+import axios from 'axios';
 const Popup = ({ message, onConfirm, onCancel }) => {
     return (
         <div style={popupStyle}>
@@ -95,7 +97,53 @@ const CVList = () => {
         setCurrentCV(null);
     };
 
+    const [userData, setUserData] = useState(
+        localStorage.getItem('Maneger')
+      );
+
+    const [Loge, setLoge] = useState(
+        localStorage.getItem('logo')
+      );
+
+    const [color, setcolor] = useState(
+        localStorage.getItem('color')
+      );
+
+
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [token, settoken] = useState(
+        localStorage.getItem('token')
+      );
+
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get('http://127.0.0.1:8000/api/articles', {
+            headers: {
+              'Accept': 'application/json',
+              'Authorization': `Bearer ${token}`,
+            },
+          });
+          setData(response.data[0]);
+          console.log(response.data);
+          
+          setLoading(false);
+        } catch (error) {
+          setError(error.message);
+          setLoading(false);
+        }
+      };
+  
+      fetchData();
+    }, []); // المصفوفة الفارغة لضمان أن الجلب يحدث مرة واحدة عند التحميل
+  
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;
     return (
+            <>
+            <NavBar2 userData={userData}Loge={Loge}color={color}/>
         <section className='CV'>
             <Container>
                 <ul className="cv-list">
@@ -122,6 +170,7 @@ const CVList = () => {
                 }
             </Container>
         </section >
+            </>
     );
 };
 

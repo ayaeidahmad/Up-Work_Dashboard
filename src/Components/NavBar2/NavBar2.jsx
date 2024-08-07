@@ -2,25 +2,35 @@ import { Link, Outlet } from 'react-router-dom'
 import './NavBar2.css'
 import LogoCompany from './../../assets/Images/logo.svg'
 import { Container } from 'react-bootstrap'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-const NavBar2 = () => {
+const NavBar2 = ({userData,Loge,color}) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     }
+
+    let newColor
+    if(color == '#ffffff')
+    {
+         newColor = '#000'
+    }else
+    {
+        newColor = color
+    }
+    
     return (
         <>
-        <section className="dash-navbar">
+        <section className="dash-navbar" style={{backgroundColor:`${newColor}`}}>
             <Container className='dash'>
-                <img src={LogoCompany} alt="LogoCompany" className='logo'/>
-                <Link to="" className='jobs'>Jobs</Link>
+                <img src={`http://127.0.0.1:8000${Loge}`} style={{width: '40px'}} alt="LogoCompany" className='logo'/>
+                <Link to="/nav" className='jobs'>Jobs</Link>
                 <Link to="/articles" className='article'>Article</Link>
                 <Link to="/cvs"  className='cvs'>CVs</Link>
-                <p className='company-name'>Focal X Agency</p>
+                <p className='company-name'>{userData}</p>
             </Container>
             <Container className='menu'>
                 {/* menu */}
