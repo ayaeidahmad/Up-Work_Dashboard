@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
-
-
+import './Logein.css'
+import image from './../../assets/Images/login.jpg'
+import logo from './../../assets/Images/upwork1.png'
 const Logein = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -43,32 +43,40 @@ const Logein = () => {
   };
 
   return (
-    <div>
-      <h2>تسجيل الدخول</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>البريد الإلكتروني:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+    <div className='login'>
+      <div className="container">
+        <img className='image-login' src={image} alt="image-login" />
+        <div className="form">
+          <div className="title">
+            <img className='logo' src={logo} alt="logo" />
+            <h2>Login</h2>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <div className='email'>
+              <label>Email</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className='password'>
+              <label>Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+            <button type="submit" disabled={loading}>
+              {loading ? 'Login in progress' : 'Login'}
+            </button>
+          </form>
         </div>
-        <div>
-          <label>كلمة المرور:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button type="submit" disabled={loading}>
-          {loading ? 'جارٍ تسجيل الدخول...' : 'تسجيل الدخول'}
-        </button>
-      </form>
+      </div>
     </div>
   );
 };

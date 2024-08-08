@@ -1,0 +1,76 @@
+.login {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(201deg 93% 77% / 24%);
+}
+.login form {
+    text-align: start;
+    margin-right: 50px;
+}
+.login .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    border-radius: 20px;
+    width: 90%;
+    background-color: #fff;
+    box-shadow: 1px 1px 35px 2px hsl(201deg 93% 77%);
+}
+.login .image-login {
+    width: 450px;
+}
+.login .title {
+    margin-bottom: 40px;
+}
+.login .title h2 {
+    font-size: 50px;
+    font-weight: bold;
+}
+.login form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+.login form input:focus {
+    outline: #dee2e6;
+}
+.login .email label , .login .password label {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.login .logo {
+    width: 100px;
+    margin-left: -25px;
+}
+.login .form {
+    width: 100%;
+}
+.login button {
+    background-color: #fff;
+    color: #61c8ff;
+    border: 1px solid #61c8ff;
+    padding: 10px;
+    border-radius: 5px;
+}
+.login button:hover {
+    background-color: #61c8ff;
+    color: #fff;
+    border: 1px solid #61c8ff;
+}
+@media (max-width:992px) {
+    .login .image-login {
+        display: none;
+    }
+    .login form {
+        margin: 0;
+    }
+    .login .container {
+        padding: 50px 30px;
+    }
+}
