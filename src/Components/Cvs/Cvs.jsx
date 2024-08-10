@@ -6,7 +6,9 @@ import { faCheck , faTimes , faTrashAlt } from '@fortawesome/free-solid-svg-icon
 import './Cvs.css'
 import NavBar2 from '../NavBar2/NavBar2';
 import axios from 'axios';
+
 const Popup = ({ message, onConfirm, onCancel }) => {
+    
     return (
         <div style={popupStyle}>
             <div className='popup' style={popupContentStyle}>
@@ -48,14 +50,10 @@ const popupContentStyle = {
 };
 
 const CVList = () => {
-    const [cvs, setCvs] = useState([
-        { company_id: 1, name: 'ahmad', email: "ahmad@555gmail.com", file_path: pdf, status: '' },
-        { company_id: 2, name: 'ahmad', email: "ahmad@555gmail.com", file_path: pdf, status: '' },
-        { company_id: 5, name: 'ahmad', email: "ahmad@555gmail.com", file_path: pdf, status: '' },
-    ]);
 
     const [popup, setPopup] = useState({ show: false, message: '', onConfirm: null });
     const [currentCV, setCurrentCV] = useState(null);
+    const [cvs, setCvs] = useState([]);
 
     const showConfirmationPopup = (message , onConfirm) => {
         setPopup({ show: true, message , onConfirm });
@@ -87,9 +85,19 @@ const CVList = () => {
         closePopup();
     };
 
-    const deleteCV = (id) => {
-        setCvs(cvs.filter(cv => cv.company_id !== id));
-        closePopup();
+    const deleteCV = async (id) => {
+        try {
+            const response = await axios.delete(`http://127.0.0.1:8000/api/cv/${id}`, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+            console.log('Deleted:', response.data);
+            setCvs(cvs.filter(cv => cv.company_id !== id));
+            closePopup();
+        } catch (error) {
+            console.error('Error deleting the CV:', error);
+        }
     };
 
     const closePopup = () => {
@@ -109,8 +117,6 @@ const CVList = () => {
         localStorage.getItem('color')
       );
 
-
-    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [token, settoken] = useState(
@@ -120,13 +126,13 @@ const CVList = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://127.0.0.1:8000/api/articles', {
+          const response = await axios.get('http://127.0.0.1:8000/api/get-cvs', {
             headers: {
               'Accept': 'application/json',
               'Authorization': `Bearer ${token}`,
             },
           });
-          setData(response.data[0]);
+          setCvs(response.data[0]);
           console.log(response.data);
           
           setLoading(false);
@@ -149,7 +155,8 @@ const CVList = () => {
                 <ul className="cv-list">
                     {cvs.map(cv => (
                         <li key={cv.company_id} className="cv-item" >
-                            <a href={cv.file_path} className='title' target="_blank" rel="noopener noreferrer" >{cv.name}</a>
+                            <a href={`http://127.0.0.1:8000/${cv.file_path}`} className='title' target="_blank" rel="noopener noreferrer" >Show_CV</a>
+                            <p>{cv.name}</p>
                             {cv.status && <span style={{ color: cv.status === 'Accepted' ? 'green' : 'red' }}>{cv.status}</span>}
                             <div className='icons'>
                                 <FontAwesomeIcon className='icon' icon={faCheck}  onClick={() => handleApprove(cv)} ></FontAwesomeIcon>

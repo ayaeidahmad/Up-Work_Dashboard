@@ -42,12 +42,12 @@ function App() {
     <Routes>
       <Route path='/' element={<Logein />} />
       <Route path='/nav' element={<JobCard />} />
-      <Route path='/articles' element={<Articlecard articles={articles} />} />
-      <Route path='/cvs' element={<Cvs />} />
       <Route path='/addjob' element={<AddJobs />} />
       <Route path='/EditCardJob' element={<EditCardJob />} />
+      <Route path='/articles' element={<Articlecard articles={articles} />} />
       <Route path='/AddArticle' element={<AddArticle />} />
       <Route path='/EditeArticle' element={<EditArticle />} />
+      <Route path='/cvs' element={<Cvs />} />
     </Routes>
   )
 }
