@@ -73,10 +73,10 @@ const CVList = () => {
         });
     };
 
-    const handleDelete = (cv) => {
-        setCurrentCV(cv);
+    const handleDelete = (id) => {
+        setCurrentCV(id);
         showConfirmationPopup('Do you want to delete this cv ? ', () => {
-            deleteCV(cv.company_id);
+            
         });
     };
 
@@ -143,7 +143,7 @@ const CVList = () => {
       };
   
       fetchData();
-    }, []); // المصفوفة الفارغة لضمان أن الجلب يحدث مرة واحدة عند التحميل
+    }, [token]); // المصفوفة الفارغة لضمان أن الجلب يحدث مرة واحدة عند التحميل
   
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
@@ -160,8 +160,7 @@ const CVList = () => {
                             {cv.status && <span style={{ color: cv.status === 'Accepted' ? 'green' : 'red' }}>{cv.status}</span>}
                             <div className='icons'>
                                 <FontAwesomeIcon className='icon' icon={faCheck}  onClick={() => handleApprove(cv)} ></FontAwesomeIcon>
-                                <FontAwesomeIcon className='icon' icon={faTimes}  onClick={() => handleReject(cv)} ></FontAwesomeIcon>
-                                <FontAwesomeIcon className='icon' icon={faTrashAlt}  onClick={() => handleDelete(cv)} ></FontAwesomeIcon>
+                                <FontAwesomeIcon className='icon' icon={faTimes}  onClick={() => deleteCV(cv.id)} ></FontAwesomeIcon>
                             </div>
                         </li>
                     ))}

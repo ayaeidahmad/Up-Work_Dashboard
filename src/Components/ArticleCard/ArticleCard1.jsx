@@ -11,7 +11,7 @@ import PopupDelete from '../PopupDelete/PopupDelete';
 import axios from 'axios';
 import NavBar2 from '../NavBar2/NavBar2';
 
-const ArticleCards = ({ articles, Stetus }) => {
+const ArticleCards = ({ Stetus }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [selectedArticleId, setSelectedArticleId] = useState(null);
     const [idCompany, setidCompany] = useState(localStorage.getItem('companyid'));
