@@ -128,7 +128,7 @@ const AddJobs = () => {
                         required 
                     />
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" className='submit'>Submit</button>
             </form>
 
             {error && <p style={{ color: 'red' }}>{error}</p>}

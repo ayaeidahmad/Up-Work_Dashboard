@@ -25,6 +25,7 @@ function App() {
       <Route path='/AddArticle' element={<AddArticle />} />
       <Route path='/EditeArticle/:id' element={<EditArticle />} />
       <Route path='/cvs' element={<Cvs />} />
+      <Route path='/login' element={<Logein />} />
     </Routes>
   )
 }

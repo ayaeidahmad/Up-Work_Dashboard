@@ -30,6 +30,14 @@
     color: #fff;
     font-size: 20px;
 }
+.logout {
+    border: 1px solid #fff;
+    background-color: transparent;
+    padding: 2px 5px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 20px;
+}
 @media (max-width:768px) {
     .menu-button {
         display: inline;

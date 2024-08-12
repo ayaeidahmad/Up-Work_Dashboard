@@ -81,7 +81,7 @@ const JobCard = ({ page }) => {
         setShowPopup(false);
     };
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <p className='loading'></p>;
     if (error) return <p>Error: {error}</p>;
 
     return (
