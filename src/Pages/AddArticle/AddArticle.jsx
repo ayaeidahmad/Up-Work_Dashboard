@@ -13,7 +13,8 @@ const AddArticle = () => {
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);
     const [company_id, setcompany_id] = useState(localStorage.getItem('companyid'));
-
+    const navegeto = useNavigate()
+    
     // دالة handleSubmit لإرسال البيانات عند النقر على زر الإرسال
     const handleSubmit = async (e) => {
         e.preventDefault();  // منع إعادة تحميل الصفحة
@@ -41,6 +42,7 @@ const AddArticle = () => {
             setTitle('');
             setBody('');
             setFile(null);
+            navegeto('/articles')
         } catch (error) {
             console.error('Error submitting the form:', error);
             setError(error.message);

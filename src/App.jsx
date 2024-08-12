@@ -20,10 +20,10 @@ function App() {
       <Route path='/' element={<Logein />} />
       <Route path='/nav' element={<JobCard />} />
       <Route path='/addjob' element={<AddJobs />} />
-      <Route path='/EditCardJob' element={<EditCardJob />} />
+      <Route path='/EditCardJob/:id' element={<EditCardJob />} />
       <Route path='/articles' element={<Articlecard />} />
       <Route path='/AddArticle' element={<AddArticle />} />
-      <Route path='/EditeArticle' element={<EditArticle />} />
+      <Route path='/EditeArticle/:id' element={<EditArticle />} />
       <Route path='/cvs' element={<Cvs />} />
     </Routes>
   )

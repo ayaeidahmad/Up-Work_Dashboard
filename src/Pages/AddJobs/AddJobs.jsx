@@ -23,7 +23,8 @@ const AddJobs = () => {
         const [error, setError] = useState(null);
         const [success, setSuccess] = useState(false);
         const [idCompany, setidCompany] = useState(localStorage.getItem('companyid'));
-    
+        const navegeto = useNavigate()
+        
         // 2. دالة `handleSubmit` لإرسال البيانات المدخلة باستخدام axios
         const handleSubmit = async (e) => {
             e.preventDefault(); // منع إعادة تحميل الصفحة عند الإرسال
@@ -48,6 +49,7 @@ const AddJobs = () => {
                 console.log('Data submitted successfully:', response.data);
                 setSuccess(true);
                 setError(null);
+                navegeto('/nav')
             } catch (error) {
                 console.error('Error submitting data:', error);
                 setError('Failed to submit data.');

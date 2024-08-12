@@ -101,7 +101,7 @@ const ArticleCards = ({ Stetus }) => {
                                             </Card.Text>
                                             {Stetus &&
                                                 <div className='button'>
-                                                    <Link to="/EditeArticle" className="update">
+                                                    <Link to={`/EditeArticle/${index.id}`} className="update">
                                                         <FontAwesomeIcon icon={faEdit} />
                                                     </Link>
                                                     <button className="trash" onClick={() => { setIsPopupOpen(true); setSelectedArticleId(index.id); }}>

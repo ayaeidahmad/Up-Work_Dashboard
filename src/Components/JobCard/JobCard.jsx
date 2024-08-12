@@ -115,7 +115,7 @@ const JobCard = ({ page }) => {
                                         </p>
                                         <button onClick={handleAddReviewsClick} className={page === "landingPage" ? "Apply" : "Applynone"}>Apply Here</button>
                                         <div className={page === "landingPage" ? "buttonsNone" : "buttons"}>
-                                            <Link to="/EditCardJob" className="update">
+                                            <Link to={`/EditCardJob/${job.id}`} className="update">
                                                 <FontAwesomeIcon icon={faEdit}/>
                                             </Link>
                                             <button 
