@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 import './NavBar2.css'
 import LogoCompany from './../../assets/Images/logo.svg'
 import { Container } from 'react-bootstrap'
@@ -13,6 +13,11 @@ const NavBar2 = ({userData,Loge,color}) => {
         setIsMenuOpen(!isMenuOpen);
     }
 
+    const navigate =useNavigate ()
+    function Logout() {
+        navigate('/login')
+        localStorage.removeItem('token')
+    }
     let newColor
     if(color == '#ffffff')
     {
@@ -31,6 +36,7 @@ const NavBar2 = ({userData,Loge,color}) => {
                 <Link to="/articles" className='article'>Article</Link>
                 <Link to="/cvs"  className='cvs'>CVs</Link>
                 <p className='company-name'>{userData}</p>
+                <button className='logout' onClick={Logout}>LogOut</button>
             </Container>
             <Container className='menu'>
                 {/* menu */}

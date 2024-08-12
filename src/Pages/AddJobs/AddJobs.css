@@ -51,3 +51,9 @@ color: red;
 font-size: 10px;
 padding: 0 0 6px 5px;
 }
+.submit {
+    margin-top: 20px;
+}
+.addjob form div {
+    margin-bottom: 10px;
+}

@@ -30,7 +30,7 @@
     font-weight: bold;
 }
 .jobCard .title {
-    color: #5cb7fd;
+    color: #4d4b4b;
     font-size: 22px;
     font-weight: 700;
 }
@@ -83,12 +83,12 @@
 .add {
     padding: 10px 15px;
     background-color: #fff;
-    border: 1px solid #5cb7fd;
-    color: #5cb7fd;
+    border: 1px solid #4d4b4b;
+    color: #4d4b4b;
     border-radius: 10px;
     text-decoration: none;
 }
 .add:hover {
-    background-color: #5cb7fd;
-    color: #000;
+    background-color: #4d4b4b;
+    color: #fff;
 }
