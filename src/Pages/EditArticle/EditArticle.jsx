@@ -60,7 +60,7 @@ const EditArticle = () => {
         }
 
         try {
-            const response = await axios.put(`http://127.0.0.1:8000/api/article/${id}`, formData, {
+            const response = await axios.post(`http://127.0.0.1:8000/api/article/${id}`, formData, {
                 headers: {
                     'Accept': 'application/json',
                     'Authorization': `Bearer ${localStorage.getItem('token')}`,
