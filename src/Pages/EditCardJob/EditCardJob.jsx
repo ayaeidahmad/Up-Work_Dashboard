@@ -5,7 +5,7 @@ import { faAsterisk } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import './EditCardJob.css'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 function EditCardJob() {
 
     const [userData, setUserData] = useState(localStorage.getItem('ManegerName'));

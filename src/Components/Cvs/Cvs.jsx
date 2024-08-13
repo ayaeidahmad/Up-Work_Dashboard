@@ -155,7 +155,7 @@ const CVList = () => {
                 <ul className="cv-list">
                     {cvs.map(cv => (
                         <li key={cv.company_id} className="cv-item" >
-                            <a href={`http://127.0.0.1:8000/images/cvs/${cv.file_path}`} className='title' target="_blank" rel="noopener noreferrer" >Show_CV</a>
+                            <a href={`http://127.0.0.1:8000/${cv.file_path}`} className='title' target="_blank" rel="noopener noreferrer" >Show_CV</a>
                             <p>{cv.name}</p>
                             {cv.status && <span style={{ color: cv.status === 'Accepted' ? 'green' : 'red' }}>{cv.status}</span>}
                             <div className='icons'>
